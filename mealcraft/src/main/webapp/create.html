@@ -1,0 +1,114 @@
+<style>
+	body { 
+	  background: url(images/menu.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: 800px;
+	  -moz-background-size: 800px;
+	  -o-background-size: 800px;
+	  background-size: 800px;
+	}
+</style>
+
+<div class="row pt-3">
+	<div class="col-sm-3">			
+	</div>
+	
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-header text-center">
+				<h3 class="font-weight-bold">Create Recipe</h3>				
+			</div>
+						
+			<div class="card-body">
+			<form name="createForm">
+				<div class="form-group">
+					<label for="name" class="font-weight-bold">Name:</label>
+					<input ng-model="recipe.name" required ng-minlength="2" name="name"
+						type="text" class="form-control" id="name">					
+					<span ng-show="createForm.name.$touched && createForm.name.$invalid"
+						class="text-danger">
+						required and must be at least two characters.
+					</span>	
+									
+				</div>
+				
+				<div class="form-group">
+					<label for="category" class="font-weight-bold">Category:</label>
+					<select ng-options="value for value in categories" required name="category"
+						ng-model="recipe.category" class="form-control" id="category">
+					</select>
+					
+					<span ng-show="createForm.category.$touched && createForm.category.$invalid"
+						class="text-danger">
+						required
+					</span>	
+					
+				</div>
+				
+				<div class="form-group">
+					<label for="directions" class="font-weight-bold">Directions:</label>
+					<textarea ng-model="recipe.directions" required
+						rows="5" class="form-control" id="directions" name="directions"></textarea>	
+									
+					<span ng-show="createForm.directions.$touched && createForm.directions.$invalid"
+						class="text-danger">
+						required
+					</span>
+						
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-6">
+					<label for="ingredient" class="font-weight-bold">Ingredients:</label>
+						<select ng-repeat="input in inputs" name="ingredient"
+							ng-options="ingredient for ingredient in ingTable" class="form-control ingredient-select" 
+							ng-model="ingredient" style="margin-top:10px">
+						</select>
+						
+						<span ng-show="createForm.ingredient.$touched && createForm.ingredient.$invalid"
+						class="text-danger">
+						required.
+					</span>	
+					
+					</div>
+					
+					<div class="form-group col-6">
+						<label for="measurement" class="font-weight-bold">Measurements:</label>
+						<input ng-repeat="input in inputs" name="measurement"  
+							required type="text" class="form-control measurement-select"
+							ng-model="measurement">
+								
+						<span ng-show="createForm.measurements.$touched && createForm.measurements.$invalid"
+							class="text-danger">
+							required.
+						</span>	
+					
+					</div>
+				
+				</div>
+				
+				
+				<div>
+					<button class="btn btn-light" ng-click="add()">add</button>
+				</div>
+						
+			</form>
+			
+		</div>
+		
+		<div class="card-footer text-center">
+		<h5 class="text-success" ng-bind="createStatus"></h5>
+			<button type="button" class="btn btn-success"
+				ng-disabled="createForm.$invalid || disableCreate"
+				ng-click="createRecipe()">create</button>			
+			<button type="button" class="btn btn-info"
+				ng-click="clear()">clear</button>
+		</div>
+		
+		</div>
+		
+	</div>
+	
+	<div class="col-sm-3">			
+	</div>
+	
+</div>

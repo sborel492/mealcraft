@@ -1,0 +1,75 @@
+<div class="row">
+	<div class="col-sm-7">
+	<br>
+	<br>
+		<div class="card">
+			<div class="card-header text-center">
+				<h3 class="font-weight-bold">Update Recipe</h3>
+			</div>			
+		
+			<div class="card-body">
+			<form name="updateForm">
+				<div class="form-group">
+					<label for="title" class="font-weight-bold">Name:</label>
+					<input ng-model="recipe.name" required ng-minlength="2"
+						type="text" class="form-control" id="name">
+				</div>
+				
+				<div class="form-group">
+					<label for="category" class="font-weight-bold">Category:</label>
+					<select ng-model="recipe.category" class="form-control" id="category">
+					<option ng-repeat="category in categories">{{category}}</option>
+					
+					</select>
+					
+				</div>
+				
+				<div class="form-group">
+					<label for="directions" class="font-weight-bold">Directions:</label>
+					<textarea ng-model="recipe.directions" required
+						rows="5" class="form-control" id="directions"></textarea>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-6">
+						<label for="ingredient" class="font-weight-bold">Ingredients:</label>
+						<select ng-repeat="ingredient in recipe.ingredientsList" name="ingredient"
+							ng-options="ingredient for ingredient in ingTable" class="form-control ingredient-select" 
+							ng-model="ingredient" style="margin-top:10px">
+			
+						</select>
+						
+					</div>
+					
+					<div class="form-group col-6">
+						<label for="measurements" class="font-weight-bold">Measurements:</label>
+						<input ng-repeat="measurement in recipe.measurements track by $index" name="measurement"  
+							required type="text" class="form-control measurement-select"
+							ng-model="measurement">
+					</div>
+
+				</div>
+				
+			</form>
+			
+			</div>
+			
+			<div class="card-footer text-center">
+				<h5 class="text-success text-center" ng-bind="updateStatus"></h5>
+				<button type="button" class="btn btn-success" ng-disabled="updateForm.$invalid || disableUpdate" ng-click="updateRecipe()">update</button>
+				<button type="button" class="btn btn-danger" ng-disabled="disableUpdate" ng-click="deleteRecipe()">DELETE</button>
+				<button type="button" class="btn btn-info" ng-click="goToRecipeView(recipe.name)">cancel</button>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+	<div class="col-sm-5">		
+		<div class="pt-5">
+		<img class="img-fluid img-thumbnail" src="./images/dinner.jpg">
+		</div>
+		
+	</div>
+	
+</div>

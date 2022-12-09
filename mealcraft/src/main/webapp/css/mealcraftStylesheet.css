@@ -1,0 +1,343 @@
+@charset "ISO-8859-1";
+
+body, html {
+	margin-top: 10px;
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+				url(../images/knittingNoodles.jpg) no-repeat center center fixed;
+	background-size: cover;
+	font-family: 'Garamond', serif;
+	font-size: 1.0625em;
+}
+
+.jumbotron {
+	background: linear-gradient(to bottom right, rgba(227, 134, 130, 1),
+				rgba(227, 134, 130, 0));
+	color: #fbf2ea;
+	text-shadow: 2px 2px 2px black;
+}
+
+.about-card {
+	box-shadow: 5px 5px 25px 5px black;
+	background-color: #ecb390;
+	color: black;
+	padding:10px;
+	margin-top: 5px;
+	border-radius: 15px;
+}
+
+#home-pic {
+	box-shadow: 5px 5px 25px 5px black;
+}
+
+#food {
+	box-shadow: 5px 5px 25px 5px black;
+}
+
+nav {
+	margin: 0 px;
+	padding: 0 px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #6f9a8d;
+	z-index: 9998;
+}
+
+.logo {
+	color: #fbf2ea;
+	text-shadow: 0 0 4px black;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 20px;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: space-around;
+	width: 50%;
+}
+
+.nav-links li {
+	list-style: none;
+}
+
+.nav-links a {
+	color: #fbf2ea;
+	text-decoration: none;
+	text-shadow: 2px 2px 5px black;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+
+.burger {
+	display: none;
+	cursor: pointer;
+}
+
+.burger div {
+	width: 25px;
+	height: 3px;
+	background-color: #fbf2ea;
+	margin: 3px;
+}
+
+@media screen and (max-width : 1800px) {
+	.nav-links {
+		width: 60%;
+	}
+}
+
+@media screen and (max-width : 768px) {
+	body {
+		overflow-x: hidden;
+	}
+	.nav-links {
+		position: absolute;
+		right: 0px;
+		height: 92vh;
+		top: 8vh;
+		background-color: #6f9a8d;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		transform: translateX(100%);
+		transition: transform 0.5s ease-in;
+	}
+	.nav-links li {
+		opacity: 0;
+	}
+	.burger {
+		display: block;
+		cursor: pointer;
+	}
+}
+
+.nav-active {
+	transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+		from {
+		opacity: 0;
+		transform: translateX(50px);
+		}
+		to{
+		opacity: 1;
+		transform: translateX(0px);
+		}
+
+	}
+
+}
+
+form {
+	background: #6f9a8d;
+	display: flex;
+	flex-direction: column;
+	padding: 2vw 2vw;
+	width: 90%;
+	max-width: 600px;
+	border-radius: 10px;
+}
+
+form input {
+	border: 0;
+	margin: 10px 0;
+	padding: 20px;
+	outline: none;
+	background: #fbf2ea;
+	font-size: 16px;
+}
+ 
+form button {
+	background: #fbf2ea;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.card {
+	background: #fbf2ea;
+	box-shadow: 5px 5px 15px 5px black;
+	border:none;
+}
+
+.card-header {
+	background: linear-gradient(to bottom, #d9534f 0%, #ecb390 95%);
+	border:none;
+}
+
+.card-footer {
+	background: linear-gradient(to top, #d9534f 0%, #ecb390 95%);
+	border:none;
+}
+
+.card-body {
+	background: #ecb390;
+}
+
+#menu-cards .card {
+	background: #fbf2ea;
+	box-shadow: 5px 5px 15px 5px black;
+	
+}
+
+#menu-cards .card-header {
+	background: linear-gradient(to bottom, #6f9a8d 0%, #f5f5dc 90%);
+	border:none;
+}
+
+#menu-cards .card-body {
+	background: #f5f5dc;
+}
+
+#menu-cards .card-footer {
+	background: linear-gradient(to top, #6f9a8d 0%, #f5f5dc 90%);
+	border:none;
+}
+
+.card-body tr:nth-child(odd) {
+	background-color: #6f9a8d;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 1px black;
+}
+
+.card-body tr:nth-child(even) {
+	background-color: #f5f5dc;
+}
+
+.card-body tr:hover {
+	background-color: #808080;
+}
+
+#about {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background: #696969;
+}
+
+#aBody {
+	background: #5d4954;
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+}
+
+.wrapper {
+	margin-top: 5%;
+}
+
+.wrapper h1 {
+	font-family: 'Allura', cursive;
+	font-size: 52px;
+	margin-bottom: 60px;
+	text-align: center;
+	color: #fff;
+}
+
+.jumbotron img {
+	width: 100%;
+	height: 100%;
+	border-radius: 25px;
+	padding: 20px;
+	background: #5d4954;
+}
+
+div.desc {
+	padding: 15px;
+	text-align: center;
+}
+
+.btn-light {
+	background-color: #fbf2ea;
+	box-shadow: 2px 2px 3px 2px black;
+	border:0;
+	outline:none;
+}
+
+.btn-light:hover {
+	background-color: #f3d7bf;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-primary:focus {
+	background-color: #f3d7bf;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-primary {
+	background-color: #ecb390;
+	box-shadow: 2px 2px 3px 2px black;
+	color: black;
+	border:0;
+	outline:none;
+}
+
+.btn-primary:hover {
+	background-color: #e59766;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-primary:focus {
+	background-color: #e59766;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-success {
+	background-color: #54786f;
+	box-shadow: 2px 2px 3px 2px black;
+	border: 0;
+	outline: none;
+}
+
+.btn-success:hover {
+	background-color: #3f5a53;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-success:focus {
+	background-color: #3f5a53;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-info {
+	background-color: #5ea6ed;
+	box-shadow: 2px 2px 3px 2px black;
+	border: 0;
+	outline: none;
+}
+
+.btn-info:hover {
+	background-color: #308ce8;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-info:focus {
+	background-color: #308ce8;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-danger {
+	background-color: #bc2e29;
+	box-shadow: 2px 2px 3px 2px black;
+	border: 0;
+	outline: none;
+}
+
+.btn-danger:hover {
+	background-color: #922420;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+.btn-danger:focus {
+	background-color: #922420;
+	box-shadow: 2px 2px 3px 2px black;
+}
+
+
+
+
+

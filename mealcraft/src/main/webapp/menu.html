@@ -1,0 +1,86 @@
+<div ng-show="!viewMenu">		
+	<div class="jumbotron text-center">
+	<span class="display-4">Search and Menu Builder</span>
+</div>
+<div class="card text-center col-9 mx-auto d-block" style="background-color: #fbf2ea; padding: 15px">
+	<h5 class="font-weight-bold">
+		Recipes in your menu: {{menu.length}}
+	</h5>
+	
+	<div>
+		<button class="btn btn-info" style="width:25%" ng-click="viewMyMenu()">view menu</button>
+		<button class="btn btn-success" style="width:25%" ng-click="getRandomMenu()">generate random menu</button>
+	</div>
+		
+	<p class="text-center col-10 mx-auto d-block" style="white-space:pre-wrap">
+	Here you can search through all our available recipes, and add them to a menu.
+	Click "generate random menu" to automatically add 7 random dinners to your list.
+	Click "add to menu" on a recipe to add it to your list.</p>
+	<div class="row">
+		<div class="col-4 mx-auto d-block">
+			<h6>Search By Name:</h6>
+			<input type="text" id="searchName" ng-model="recipe.name">
+			<button class="btn-sm btn-primary" ng-click="getRecipesByName()">search</button>
+		</div>
+		<div class="col-2">
+		<br>
+		<span> OR </span>
+		</div>
+		<div class="col-4 mx-auto d-block">
+			<h6>Choose a Category:</h6>
+			<select style="padding: 5px 10px; width:75%" ng-options="value for value in categories" required name="category"
+					ng-model="recipe.category" id="category" ng-click="getRecipesByCategory()">
+			</select>
+		</div>
+		<div class="col-2 mx-auto d-block">
+			<br>
+			<button class="btn-sm btn-danger" ng-click="clearSearch()">clear</button>
+		</div>
+	</div>
+</div>
+
+	<div class="row p-3 text-center" id="menu-cards">
+		<div class="card-deck mx-auto d-block" ng-repeat="recipe in recipes">
+			<div class="card m-3">
+				<div class="card-header font-weight-bold">
+					{{recipe.name}}
+				</div>
+				<div class="card-body">
+					<img class="img-fluid" src="./images/{{recipe.picUrl}}"
+						style="height: 300; width: 200;">
+				</div>
+				<div class="card-footer font-weight-bold">
+					category: {{recipe.category}}
+					<br>
+					<button class="btn-sm btn-primary float-left" ng-click="goToRecipeView(recipe.name)">
+						view recipe
+					</button>
+					<button class="btn-sm btn-primary float-right" ng-click="addToMenu(recipe)">
+						add to menu
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div ng-show="viewMenu">
+	<div class="jumbotron text-center">
+	<span class="display-4">Menu</span>
+</div>
+	<div class="card text-center">
+		<div class="card-header" style="background-color:#6f9a8d">
+			<button class="btn btn-info" ng-click="hideMyMenu()">
+				return to menu builder
+			</button>
+		</div>
+		<div class="card-body">		
+			<div ng-repeat="menuItem in menu">
+				<button class="btn-sm btn-light" style="margin:10px"
+				ng-click="goToRecipeView(menuItem.name)">view recipe</button>{{menuItem.name}}
+			</div>
+		</div>
+		<div class="card-footer" style="background-color:#6f9a8d">
+			<button class="btn btn-info" ng-click="emptyMyMenu()">clear</button>
+		</div>
+	</div>
+</div>

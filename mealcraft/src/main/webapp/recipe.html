@@ -1,0 +1,30 @@
+<div class="jumbotron text-center">
+	<span class="display-4">{{recipe.name}}</span>
+</div>
+<div class="row">
+	<div class="col-6">
+		<div class="card">
+			<div class="card-body">
+				<h3 class="font-italic font-weight-bold">Ingredients</h3>
+				<ul style="list-style-type:none">
+					<li ng-repeat="ingredient in recipe.ingredientsList">{{ingredient}}</li>
+				</ul>
+				<h3 class="font-italic font-weight-bold">Directions</h3>	
+				<p style=white-space:pre-wrap>{{recipe.directions}}</p>
+			</div>	
+			
+			<div class="card-footer text-center">
+				<button type="button" class="btn btn-success" ng-disabled="disableAdd" ng-click="addToMenu(recipe)">add to menu</button>
+				<button type="button" class="btn btn-danger" ng-click="goToUpdateView(recipe.name)">update</button>
+				<button type="button" class="btn btn-info" ng-click="goToMenuView()">back to list</button>
+			</div>
+		</div>
+	</div>	
+	<div class="col-6">
+	
+				<img class="img-fluid mx-auto d-block" style="max-height:75%; border-radius:5px;
+							box-shadow: 5px 5px 25px 5px black"
+				src="./images/{{recipe.picUrl}}">
+		
+	</div>	
+</div>
