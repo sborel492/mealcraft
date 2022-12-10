@@ -7,7 +7,7 @@ import java.sql.Connection;
 public class MariaDbUtil {
 
 	private static String connectionUrl = 
-			"jdbc:mariadb://localhost:3306/mealcraft_resources?user=root&password=pumpkinJuice2007!";
+			"jdbc:mariadb://localhost:3306/mealcraft_resources?user=root&password=*****************";
 	
 	public static Connection getConnection() {
 		Connection connection = null;
