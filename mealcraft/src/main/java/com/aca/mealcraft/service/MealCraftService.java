@@ -13,7 +13,6 @@ import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 public class MealCraftService {
 	
-//	private MealCraftDao mealcraftDao = new MealCraftDaoMock();
 	private MealCraftDao mealcraftDao = new MealCraftImpl();
 
 	public List<Recipe> getRecipes() {
@@ -23,10 +22,6 @@ public class MealCraftService {
 	public List<Recipe> getRecipesByCategory(String category) {
 		return mealcraftDao.getRecipesByCategory(category);
 	}
-
-//	public List<Recipe> getRecipesByIngredient(String ingredient) {
-//		return mealcraftDao.getRecipesByIngredient(ingredient);
-//	}
 
 	public List<Recipe> getRecipeById(Integer recipeId) {
 		validateId(recipeId);
@@ -59,11 +54,6 @@ public class MealCraftService {
 	public List<Recipe> getRandomMenu() {
 		return mealcraftDao.getRandomMenu();
 	}
-
-//	public List<Recipe> getReport(Integer startCreateDateTime, Integer endCreateDateTime) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 	
 	private void validateId(Integer recipeId) {
 		List<Recipe> recipes = mealcraftDao.getRecipeById(recipeId);
