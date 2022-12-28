@@ -21,9 +21,6 @@ public class MealCraftImpl implements MealCraftDao {
 			"SELECT * FROM recipes "
 			+ "WHERE categoryName = ?";
 	
-//	private static String selectRecipesByIngredient =
-//			"";
-	
 	private static String selectRecipeById =
 			"SELECT * FROM recipes "
 			+ "WHERE recipeId = ?";
@@ -273,12 +270,6 @@ public class MealCraftImpl implements MealCraftDao {
 		
 		return myRecipes;
 	}
-
-//	@Override
-//	public List<Recipe> getRecipesByIngredient(String ingredient) {
-//		
-//		return null;
-//	}
 
 	@Override
 	public List<Recipe> getRecipeById(Integer recipeId) {
@@ -635,7 +626,6 @@ public class MealCraftImpl implements MealCraftDao {
 				ps = conn.prepareStatement(deleteRecipeById);
 				ps.setInt(1, recipeId);
 				updateRowCount = ps.executeUpdate();
-//				System.out.println("update row count: " + updateRowCount);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			} finally {
@@ -712,11 +702,5 @@ public class MealCraftImpl implements MealCraftDao {
 		}
 		return ingTable;
 	}
-	
-//	@Override
-//	public List<Recipe> getReport(Integer startCreateDateTime, Integer endCreateDateTime) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
 
 }
