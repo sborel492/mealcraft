@@ -33,19 +33,6 @@ public class MealCraftController {
 		return service.getRecipesByCategory(category);
 	}
 
-//	@GET
-//	@Path("/ingredient/{ingredientValue}")
-//	public List<Recipe> getRecipesByIngredient(@PathParam("ingredientValue") String ingredient) {
-//		return service.getRecipesByIngredient(ingredient);
-//	}
-	
-//	@GET
-//	@Path("/ingredient/{ingredientValue}")
-//	public List<Recipe> getRecipesByIngredient(@PathParam("ingredientValue") String ingredient) {
-//		return service.getRecipesByIngredient(ingredient);
-//	}
-//	 CHANGE TO EXCLUDE BY INGREDIENT OR ALLERGEN
-
 	@GET
 	@Path("/id/{recipeIdValue}")
 	public List<Recipe> getRecipeById(@PathParam("recipeIdValue") Integer recipeId) {
@@ -57,12 +44,6 @@ public class MealCraftController {
 	public List<Recipe> getRecipesByName(@PathParam("nameValue") String name) {
 		return service.getRecipesByName(name);
 	}
-	
-//	@GET
-//	@Path("ingList/{nameValue}")
-//	public List<String> showIngredientsList(@PathParam("nameValue") String name) {
-//		return service.showIngredientsList(name);
-//	}
 	
 	@GET
 	@Path("/ingTable")
@@ -105,12 +86,5 @@ public class MealCraftController {
 	public Recipe deleteRecipe(@PathParam("recipeIdValue") Integer recipeId) {
 		return service.deleteRecipe(recipeId);
 	}
-
-//	@GET
-//	@Path("/report")
-//	public List<Recipe> getReport(@QueryParam("startCreateDateTime") Integer startCreateDateTime,
-//								 @QueryParam("endCreateDateTime") Integer endCreateDateTime) {
-//		return service.getReport(startCreateDateTime, endCreateDateTime);
-//	}
 
 }
