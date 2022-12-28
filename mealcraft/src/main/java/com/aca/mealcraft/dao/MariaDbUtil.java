@@ -24,16 +24,4 @@ public class MariaDbUtil {
 		return connection;
 	}
 	
-//	public static void main(String[] args) {
-//		
-//		Connection connection = getConnection();
-//		
-//		if (null == connection) {
-//			System.out.println("Help. Connection is null.");
-//		} else {
-//			System.out.println("A real connection!!!");
-//		}
-//		
-//	}
-	
 }
